@@ -26,7 +26,7 @@ import {
 } from "@/lib/circle/onramp-server-environment";
 
 // Constructed lazily (not at module scope): createOnrampServerKit validates
-// kitKey eagerly and throws if it's missing, which would otherwise break
+// apiKey eagerly and throws if it's missing, which would otherwise break
 // Next's build-time page-data collection whenever KIT_KEY isn't set. The
 // environment assertion runs here for the same reason.
 let server: OnrampServerKit | undefined;
@@ -38,7 +38,7 @@ function getServer(): OnrampServerKit {
     assertOnrampSandbox();
 
     server = createOnrampServerKit({
-      kitKey: process.env.KIT_KEY!,
+      apiKey: process.env.KIT_KEY!,
       // Passed through verbatim. Undefined would leave the kit on its own
       // production defaults, which assertOnrampSandbox has just ruled out.
       baseUrl: ONRAMP_API_BASE_URL,
