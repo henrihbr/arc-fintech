@@ -21,7 +21,7 @@ describe("arcTestnet", () => {
     });
     expect(arcTestnet.blockExplorers.default).toEqual({
       name: "ArcScan",
-      url: "https://testnet.arcscan.app",
+      url: "https://explorer.testnet.arc.io",
     });
   });
 });
